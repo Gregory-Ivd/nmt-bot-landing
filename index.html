@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NMT-Bot — готуйся до НМТ-2027 розумніше</title>
-<meta name="description" content="Telegram-бот для підготовки до НМТ: діагностика слабких тем, персональний план, прогноз балу. Записуйся в чергу.">
-<meta property="og:title" content="NMT-Bot — підготовка до НМТ-2027 у Telegram">
-<meta property="og:description" content="Адаптивний тренажер на твої слабкі теми. Перші 100 — місяць безкоштовно.">
+<title>За 14 днів до НМТ з англійської — перевір себе</title>
+<meta name="description" content="Telegram-бот: тести зразка НМТ-2026, персональний розбір помилок і план посилення на наступні тести. Безкоштовно.">
+<meta property="og:title" content="14 днів до НМТ з англійської — пройди тест-зразок 2026">
+<meta property="og:description" content="Тест → персональний розбір помилок → план що посилити перед наступним тестом. У Telegram. Безкоштовно.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +22,12 @@
         },
         keyframes: {
           fadeUp: { '0%': { opacity: 0, transform: 'translateY(16px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+          pulse2: { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0.6 } },
         },
-        animation: { fadeUp: 'fadeUp 0.6s ease-out' },
+        animation: {
+          fadeUp: 'fadeUp 0.6s ease-out',
+          pulse2: 'pulse2 2s ease-in-out infinite',
+        },
       },
     },
   };
@@ -45,18 +49,19 @@
     <div class="w-10 h-10 rounded-lg grad-btn flex items-center justify-center text-lg font-bold text-ink-950">N</div>
     <span class="font-bold text-xl">NMT-Bot</span>
   </div>
-  <a href="#waitlist" class="text-base font-medium text-slate-300 hover:text-white transition">Записатися</a>
+  <a href="#join" class="text-base font-medium text-slate-300 hover:text-white transition">Записатися</a>
 </header>
 
 <section class="px-6 pt-12 pb-20 max-w-4xl mx-auto text-center">
-  <div class="inline-block px-5 py-2 bg-violet-500/10 border border-violet-500/30 rounded-full text-base text-violet-300 mb-6 animate-fadeUp">
-    Запуск — вересень 2026
+  <div class="inline-flex items-center gap-2 px-5 py-2 bg-red-500/10 border border-red-500/40 rounded-full text-base text-red-300 mb-6 animate-fadeUp">
+    <span class="w-2 h-2 bg-red-400 rounded-full animate-pulse2"></span>
+    До НМТ з англійської — близько 14 днів
   </div>
   <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fadeUp">
-    Готуйся до НМТ <span class="grad-text">розумніше</span>,<br>а не довше
+    Перевір себе <span class="grad-text">зараз</span>,<br>поки ще є час
   </h1>
   <p class="text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto animate-fadeUp">
-    Telegram-бот: діагностика твоїх слабких тем, персональний план підготовки і прогноз балу. Без репетиторів за 800 грн/год.
+    Telegram-бот: тести зразка НМТ-2026, персональний розбір помилок і план посилення перед наступним тестом. Безкоштовно.
   </p>
 
   <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto animate-fadeUp">
@@ -64,11 +69,34 @@
            class="flex-1 px-5 py-4 bg-ink-800 border border-ink-700 rounded-xl text-lg text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition">
     <input type="text" name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0">
     <button type="submit" class="px-7 py-4 grad-btn text-ink-950 text-lg font-bold rounded-xl transition glow">
-      Я в черзі →
+      Хочу в бот →
     </button>
   </form>
-  <p class="text-base text-slate-500 mt-4">🎁 Перші 100 — повний місяць безкоштовно</p>
+  <p class="text-base text-slate-500 mt-4">⚡ Посилання на бот прилетить на email протягом дня</p>
   <div id="form-status" class="mt-6 text-center"></div>
+</section>
+
+<section class="px-6 py-16 max-w-5xl mx-auto">
+  <h2 class="text-3xl md:text-5xl font-bold text-center mb-3">Як це працює</h2>
+  <p class="text-lg text-slate-400 text-center mb-12">Цикл «тест → розбір → план» — стільки разів, скільки треба</p>
+
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
+      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">1</div>
+      <h3 class="font-bold text-xl mb-2">Пройди тест</h3>
+      <p class="text-base text-slate-400">Завдання у форматі НМТ-2026 з англійської: граматика, лексика, читання. У боті, на телефоні. 30 хвилин.</p>
+    </div>
+    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
+      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">2</div>
+      <h3 class="font-bold text-xl mb-2">Персональний розбір</h3>
+      <p class="text-base text-slate-400">Бачиш не просто «правильно/неправильно». До кожної помилки — пояснення, чому, і яке правило підтягнути.</p>
+    </div>
+    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
+      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">3</div>
+      <h3 class="font-bold text-xl mb-2">План посилення</h3>
+      <p class="text-base text-slate-400">Що повторити перед наступним тестом — конкретні теми і скільки часу. Пройшов наступний — бачиш ріст.</p>
+    </div>
+  </div>
 </section>
 
 <section class="px-6 py-16 max-w-5xl mx-auto">
@@ -79,28 +107,28 @@
     <details class="bg-ink-900 border border-ink-700 rounded-2xl p-6 group hover:border-violet-500/40 transition open:border-violet-500/40">
       <summary class="flex flex-col gap-3">
         <div class="flex items-start justify-between gap-3">
-          <div class="text-4xl">😩</div>
+          <div class="text-4xl">📉</div>
           <span class="text-slate-500 text-sm mt-3 group-open:rotate-180 transition-transform">▼</span>
         </div>
-        <p class="text-lg text-slate-300">Готуєшся годинами, повторюєш матеріал — а пробний бал не росте</p>
+        <p class="text-lg text-slate-300">«Граматику знаю, але тести провалюю — не розумію, де помиляюсь»</p>
       </summary>
       <div class="mt-5 pt-5 border-t border-ink-700">
         <p class="text-sm font-semibold text-violet-300 uppercase tracking-wide mb-2">Що дає бот</p>
-        <p class="text-base text-slate-300">Більшість школярів повторюють те, що вже знають. Бот аналізує діагностику і показує конкретні теми, які тягнуть бал вниз — не «вчи граматику», а «розділові знаки у складнопідрядному». Працюєш тільки над ними — бал росте за 2-3 тижні.</p>
+        <p class="text-base text-slate-300">До кожної неправильної відповіді — пояснення: яке саме правило не спрацювало, в якому контексті ти його плутаєш, що повторити. Не «вчи tenses», а «conditional 3 + past perfect — повтори».</p>
       </div>
     </details>
 
     <details class="bg-ink-900 border border-ink-700 rounded-2xl p-6 group hover:border-violet-500/40 transition open:border-violet-500/40">
       <summary class="flex flex-col gap-3">
         <div class="flex items-start justify-between gap-3">
-          <div class="text-4xl">🤷</div>
+          <div class="text-4xl">🔤</div>
           <span class="text-slate-500 text-sm mt-3 group-open:rotate-180 transition-transform">▼</span>
         </div>
-        <p class="text-lg text-slate-300">Не розумієш, які саме теми тебе тягнуть вниз. Все «начебто знаю»</p>
+        <p class="text-lg text-slate-300">«Reading важко — не знаю, словник підводить чи розуміння тексту»</p>
       </summary>
       <div class="mt-5 pt-5 border-t border-ink-700">
         <p class="text-sm font-semibold text-violet-300 uppercase tracking-wide mb-2">Що дає бот</p>
-        <p class="text-base text-slate-300">Діагностичний тест у форматі НМТ — 30 хвилин — і ти отримуєш мапу: де 90% правильних, де 40%. Без здогадок. Чітка статистика по кожній темі з програми НМТ і пріоритет, з чого починати підтягувати.</p>
+        <p class="text-base text-slate-300">Тест розділяє ці проблеми. Якщо словник — отримаєш список слів НМТ-рівня з твоїх помилок. Якщо стратегія читання — конкретні поради для завдань НМТ-формату.</p>
       </div>
     </details>
 
@@ -110,37 +138,14 @@
           <div class="text-4xl">⏰</div>
           <span class="text-slate-500 text-sm mt-3 group-open:rotate-180 transition-transform">▼</span>
         </div>
-        <p class="text-lg text-slate-300">До НМТ менше року, а ти все ще не маєш плану, з чого почати</p>
+        <p class="text-lg text-slate-300">«До НМТ 14 днів, не знаю з чого почати — вчити все?»</p>
       </summary>
       <div class="mt-5 pt-5 border-t border-ink-700">
         <p class="text-sm font-semibold text-violet-300 uppercase tracking-wide mb-2">Що дає бот</p>
-        <p class="text-base text-slate-300">Введи свою ціль (180? 195? 200?) і дату іспиту — бот будує тижневий план. Понеділок — 20 хв тренажера на тему Х, середа — повторення Y. Не треба думати «з чого починати», просто виконуй щоденні завдання.</p>
+        <p class="text-base text-slate-300">«Вчи все» — гарантований стрес і нульовий приріст. Бот будує план від твоїх конкретних помилок: 2-3 теми, 30-40 хв на день. Потім — наступний тест. Ріст видно за тиждень.</p>
       </div>
     </details>
 
-  </div>
-</section>
-
-<section class="px-6 py-16 max-w-5xl mx-auto">
-  <h2 class="text-3xl md:text-5xl font-bold text-center mb-3">Як це працює</h2>
-  <p class="text-lg text-slate-400 text-center mb-12">3 кроки до системної підготовки</p>
-
-  <div class="grid md:grid-cols-3 gap-5">
-    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
-      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">1</div>
-      <h3 class="font-bold text-xl mb-2">Діагностика</h3>
-      <p class="text-base text-slate-400">Проходиш тест у форматі НМТ. 30 хвилин — і бот точно знає твої сильні й слабкі теми</p>
-    </div>
-    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
-      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">2</div>
-      <h3 class="font-bold text-xl mb-2">Персональний план</h3>
-      <p class="text-base text-slate-400">Бот будує програму на тижні: що повторювати, скільки часу, в якій послідовності — під твою ціль</p>
-    </div>
-    <div class="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-2xl p-6">
-      <div class="w-12 h-12 bg-violet-500/20 text-violet-300 rounded-lg flex items-center justify-center text-lg font-bold mb-4">3</div>
-      <h3 class="font-bold text-xl mb-2">Тренажер</h3>
-      <p class="text-base text-slate-400">Кожен день — завдання саме на твої слабкі теми. Прогрес видно щотижня</p>
-    </div>
   </div>
 </section>
 
@@ -148,47 +153,59 @@
   <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Часті питання</h2>
   <div class="space-y-3">
     <details class="bg-ink-900 border border-ink-700 rounded-xl p-5 group">
-      <summary class="text-lg font-medium cursor-pointer flex justify-between items-center gap-3">
-        Коли можна буде користуватися?
+      <summary class="text-lg font-medium flex justify-between items-center gap-3">
+        Чи реально додати балів за 14 днів?
         <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
       </summary>
-      <p class="text-base text-slate-400 mt-3">Бета — вересень 2026. Перші 100 з черги отримають доступ ще раніше, у серпні, безкоштовно на місяць.</p>
+      <p class="text-base text-slate-400 mt-3">Так, 10-20 пунктів — реалістично, якщо працюєш точково по слабких темах, а не «вчиш все підряд». Цикл «тест → розбір → план → наступний тест» дає вимірний прогрес кожні 2-3 дні.</p>
     </details>
     <details class="bg-ink-900 border border-ink-700 rounded-xl p-5 group">
-      <summary class="text-lg font-medium cursor-pointer flex justify-between items-center gap-3">
-        Які предмети будуть?
+      <summary class="text-lg font-medium flex justify-between items-center gap-3">
+        Що в тесті?
         <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
       </summary>
-      <p class="text-base text-slate-400 mt-3">На старті — українська мова (обов'язкова). Далі — математика, історія України, англійська. Який предмет потрібен тобі — напишеш у боті після реєстрації.</p>
+      <p class="text-base text-slate-400 mt-3">Завдання за програмою НМТ-2026: граматика (Use of English), лексика, читання з розумінням. Формат і складність — як на справжньому іспиті. 30 хвилин, ~40 завдань.</p>
     </details>
     <details class="bg-ink-900 border border-ink-700 rounded-xl p-5 group">
-      <summary class="text-lg font-medium cursor-pointer flex justify-between items-center gap-3">
-        Скільки коштує?
+      <summary class="text-lg font-medium flex justify-between items-center gap-3">
+        Що я отримаю після тесту?
         <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
       </summary>
-      <p class="text-base text-slate-400 mt-3">Діагностика і базовий розбір — безкоштовно завжди. Персональний план, прогноз балу і тренажер — підписка на сезон підготовки. Ціна формується разом з першими учасниками (опитуємо вас особисто).</p>
+      <p class="text-base text-slate-400 mt-3">1) Загальний бал у форматі НМТ. 2) Розбір кожної помилки персонально — з поясненням і правилом. 3) Список тем, які треба підтягнути, і скільки часу на кожну. 4) Через 2-3 дні — наступний тест, щоб побачити приріст.</p>
     </details>
     <details class="bg-ink-900 border border-ink-700 rounded-xl p-5 group">
-      <summary class="text-lg font-medium cursor-pointer flex justify-between items-center gap-3">
-        Чим відрізняється від iLearn / репетитора?
+      <summary class="text-lg font-medium flex justify-between items-center gap-3">
+        Чому безкоштовно?
         <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
       </summary>
-      <p class="text-base text-slate-400 mt-3">iLearn — універсальний банк завдань без персоналізації. Репетитор — дорого і не завжди ефективно. NMT-Bot працює саме над твоїми слабкими темами і будує план під твою ціль балу.</p>
+      <p class="text-base text-slate-400 mt-3">Ми збираємо feedback перших користувачів, щоб зробити повноцінний продукт до НМТ-2027. Тобі — реальна допомога зараз. Нам — твоя чесна думка про бот після іспиту.</p>
+    </details>
+    <details class="bg-ink-900 border border-ink-700 rounded-xl p-5 group">
+      <summary class="text-lg font-medium flex justify-between items-center gap-3">
+        Скільки разів можу пройти тест?
+        <span class="text-slate-500 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <p class="text-base text-slate-400 mt-3">Скільки встигнеш за 14 днів. Чим частіше тренуєшся з розбором — тим більше точок зростання бачиш. Завдання в кожному наступному тесті — нові, не повторюються.</p>
     </details>
   </div>
 </section>
 
-<section id="waitlist" class="px-6 py-16 max-w-3xl mx-auto text-center">
-  <h2 class="text-4xl md:text-6xl font-bold mb-4">Записуйся в чергу</h2>
-  <p class="text-lg text-slate-400 mb-8">Жодного спаму. Один лист — коли запустимо.</p>
+<section id="join" class="px-6 py-16 max-w-3xl mx-auto text-center">
+  <div class="inline-flex items-center gap-2 px-5 py-2 bg-red-500/10 border border-red-500/40 rounded-full text-base text-red-300 mb-6">
+    <span class="w-2 h-2 bg-red-400 rounded-full animate-pulse2"></span>
+    Часу — близько 14 днів
+  </div>
+  <h2 class="text-4xl md:text-6xl font-bold mb-4">Записуйся на бот</h2>
+  <p class="text-lg text-slate-400 mb-8">Якщо цікаво перевірити себе — залиш email. Пришлемо посилання на бот сьогодні.</p>
   <form id="waitlist-form-2" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
     <input type="email" name="email" required placeholder="твій email"
            class="flex-1 px-5 py-4 bg-ink-800 border border-ink-700 rounded-xl text-lg text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition">
     <input type="text" name="hp" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0">
     <button type="submit" class="px-7 py-4 grad-btn text-ink-950 text-lg font-bold rounded-xl transition glow">
-      Я в черзі →
+      Хочу в бот →
     </button>
   </form>
+  <p class="text-sm text-slate-500 mt-4">Без спаму. Один лист — посилання на бот.</p>
   <div id="form-status-2" class="mt-6"></div>
 </section>
 
@@ -213,7 +230,7 @@
     const payload = {
       email: formData.get('email'),
       hp: formData.get('hp'),
-      source: 'landing',
+      source: 'english_14days',
       ua: navigator.userAgent,
       ...getUTM(),
     };
@@ -227,7 +244,7 @@
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload),
       });
-      statusEl.innerHTML = '<div class="inline-block px-5 py-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-300">✓ Ти в черзі. Перший лист — коли запустимо бету.</div>';
+      statusEl.innerHTML = '<div class="inline-block px-5 py-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-300 text-base">✓ Готово. Перевіряй email — посилання на бот прилетить сьогодні.</div>';
       form.reset();
     } catch (err) {
       statusEl.innerHTML = '<div class="text-red-400">Помилка. Спробуй ще раз або напиши в Telegram.</div>';
